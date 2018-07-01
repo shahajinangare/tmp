@@ -8,6 +8,7 @@ import PreventCompRender from "./preventcomprender";
 import ListNumber from "./listnumber";
 import EssayForm from "./form/essayform";
 import FlavorForm from "./form/flavorform";
+import Reservation from "./form/reservation";
 import "./app.css";
 
 const ProtectedRoute = ({ component: Comp, loggedIn, path, ...rest }) => {
@@ -82,6 +83,9 @@ class App extends Component {
           <Link to="/flavorform" className="link">
             Flavor Form
           </Link>
+          <Link to="/reservation" className="link">
+            Reservation
+          </Link>
           <button onClick={this.handleLogin}>Login</button>
         </div>
         <div className="tabs">
@@ -118,6 +122,11 @@ class App extends Component {
               path="/flavorform"
               loggedIn={this.state.loggedIn}
               component={FlavorForm}
+            />
+            <ProtectedRoute
+              path="/reservation"
+              loggedIn={this.state.loggedIn}
+              component={Reservation}
             />
             <ProtectedRoute
               path="/profile"
