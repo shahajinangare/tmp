@@ -9,6 +9,7 @@ import ListNumber from "./listnumber";
 import EssayForm from "./form/essayform";
 import FlavorForm from "./form/flavorform";
 import Reservation from "./form/reservation";
+import PasswordStrength from "./passwordstrength";
 import "./app.css";
 
 const ProtectedRoute = ({ component: Comp, loggedIn, path, ...rest }) => {
@@ -86,6 +87,9 @@ class App extends Component {
           <Link to="/reservation" className="link">
             Reservation
           </Link>
+          <Link to="/passwordstrength" className="link">
+            Password Strength
+          </Link>
           <button onClick={this.handleLogin}>Login</button>
         </div>
         <div className="tabs">
@@ -127,6 +131,11 @@ class App extends Component {
               path="/reservation"
               loggedIn={this.state.loggedIn}
               component={Reservation}
+            />
+            <ProtectedRoute
+              path="/passwordstrength"
+              loggedIn={this.state.loggedIn}
+              component={PasswordStrength}
             />
             <ProtectedRoute
               path="/profile"
