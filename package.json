@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "1.1.0",
     "bootstrap": "^4.1.0",
+    "downshift": "2.0.10",
     "isemail": "^3.1.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
